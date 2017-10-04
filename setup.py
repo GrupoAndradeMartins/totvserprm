@@ -3,7 +3,7 @@
 from setuptools import setup
 
 setup(name='totvserprm',
-      version='1.0.5',
+      version='1.0.6',
       description='API para webservices do TOTVS ERP RM.',
       url='http://github.com/grupoandrademartins/totvserprm',
       authors=[
