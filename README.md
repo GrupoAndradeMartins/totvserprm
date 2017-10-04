@@ -5,7 +5,12 @@ Exemplo:
 ```python
 from datetime import datetime
 from totvserprm.educational import Student
-stundet = Student('192.168.1.100:8051', 'admin', 'admin')
+
+server = '192.168.1.100:8051'
+username = 'admin'
+password = 'admin'
+
+stundet = Student(server, username, password)
 stundet.create(
   codcoligada=1,
   codtipocurso=1,
