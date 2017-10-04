@@ -3,11 +3,11 @@
 from setuptools import setup
 
 setup(name='totvserprm',
-      version='1.0.3',
+      version='1.0.4',
       description='API para webservices do TOTVS ERP RM.',
       url='http://github.com/grupoandrademartins/totvserprm',
-      author='grupoandrademartins',
-      author_email='staff@sismart.com.br',
+      author='Rafael G. Winter, Túlio Cesar Martins',
+      author_email='gontijobh@gmail.com, funroll.loops@gmail.com',
       license='MIT',
       packages=['totvserprm'],
       install_requires=[
@@ -16,4 +16,5 @@ setup(name='totvserprm',
           'requests',
           'zeep'
       ],
+      keywords='totvs webservice erp rm soap',
       zip_safe=False)
