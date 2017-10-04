@@ -9,7 +9,7 @@ setup(name='totvserprm',
       contributors=[
        ['Rafael G. Winter', 'rafael@rafaelgontijo.com', 'author'],
        ['Túlio Cesar Martins', 'funroll.loops@gmail.com', 'author'],
-      ]
+      ],
       license='MIT',
       packages=['totvserprm'],
       install_requires=[
