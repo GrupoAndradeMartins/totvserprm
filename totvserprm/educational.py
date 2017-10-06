@@ -4,17 +4,17 @@ from baseapi import BaseApi
 
 class Student(BaseApi):
     dataservername = 'EduAlunoData'
-    def create(self, codcoligada, codtipocurso, data_nascimento, estado_natal, naturalidade, nome, ra):
+    def create(self, **kwargs):
         return super(Student, self).create({
             'NewDataSet': {
                 'SAluno': {
-                    'CODCOLIGADA': codcoligada,
-                    'CODTIPOCURSO': codtipocurso,
-                    'DTNASCIMENTO': '{:%Y-%m-%d}T03:00:00.000',
-                    'ESTADONATAL': estado_natal,
-                    'NATURALIDADE': naturalidade,
-                    'NOME': nome,
-                    'RA': ra,
+                    'CODCOLIGADA': kwargs.get('codcoligada'),
+                    'CODTIPOCURSO': kwargs.get('codtipocurso'),
+                    'DTNASCIMENTO': '{:%Y-%m-%d}T03:00:00.000'.format(kwargs.get('data_nascimento')),
+                    'ESTADONATAL': kwargs.get('estado_natal'),
+                    'NATURALIDADE': kwargs.get('naturalidade'),
+                    'NOME': kwargs.get('nome'),
+                    'RA': kwargs.get('ra'),
                 }
             }
-        }, 'CODCOLIGADA={}'.format(codcoligada))
+        }, 'CODCOLIGADA={}'.format(kwargs.get('codcoligada')))
