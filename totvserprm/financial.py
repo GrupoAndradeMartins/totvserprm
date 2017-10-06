@@ -15,7 +15,6 @@ class Client(BaseApi):
                     'CODEXTERNO': kwargs.get('codexterno'),
                     'CODCOLIGADA': kwargs.get('codcoligada'),
                     'CODCFO': -1,
-                    'CLASSIFICACAO': kwargs.get('classificacao'),
                     'CATEGORIA': kwargs.get('categoria'),
                     'CGCCFO': kwargs.get('cpf'),
                     'TIPORUA': kwargs.get('tipo_rua'),
@@ -29,7 +28,7 @@ class Client(BaseApi):
                     'DTNASCIMENTO': '{:%Y-%m-%d}T03:00:00.000'.format(kwargs.get('data_nascimento')),
                     'NOME': kwargs.get('nome'),
                     'NOMEFANTASIA': kwargs.get('nome'),
-                    'PAGREC': kwargs.get('pagrec'),
+                    'PAGREC': kwargs.get('classificacao'),
                     'ATIVO': True,
                     'PESSOAFISOUJUR': 'f',
                     'IDCFO': -1
