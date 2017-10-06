@@ -4,7 +4,7 @@ from dicttoxml import dicttoxml
 from lxml import objectify
 
 
-class BaseApi:
+class BaseApi(object):
     dataservername = ''
 
     def __init__(self, server, username, password):
@@ -17,5 +17,5 @@ class BaseApi:
     def get(self, codcoligada, id):
         primary_key = '{};{}'.format(codcoligada, id)
         return_from_api = self.service.ReadRecord(
-            DataServerName=self.dataservername, PrimaryKey=primary_key, Contexto='')
+            DataServerName=self.dataservername, PrimaryKey=primary_key, Contexto='CODCOLIGADA={}'.format(codcoligada))
         return objectify.fromstring(return_from_api)
