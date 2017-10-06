@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from baseapi import BaseApi
 
+
 class Student(BaseApi):
     dataservername = 'EduAlunoData'
     def create(self, codcoligada, codtipocurso, data_nascimento, estado_natal, naturalidade, nome, ra):
