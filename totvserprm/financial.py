@@ -1,17 +1,12 @@
 # -*- coding: utf-8 -*-
-from auth import create_service
-from dicttoxml import dicttoxml
-from lxml import objectify
+from baseapi import BaseApi
 
-
-class Client:
-    def __init__(self, server, username, password):
-        self.service = create_service(server, username, password)
-
+class Client(BaseApi):
+    dataservername = 'FinCFODataBR'
     def create(self, codexterno, codcoligada, data_nascimento, nome, pagrec, codcoligada_contexto=None):
         if not codcoligada_contexto:
             codcoligada_contexto = codcoligada
-        client_xml = dicttoxml({
+        return super(Student, self).create({
             'NewDataSet': {
                 'FCFO': {
                     'CODEXTERNO': codexterno,
@@ -26,12 +21,4 @@ class Client:
                     'IDCFO': -1
                 }
             }
-        }, attr_type=False)
-
-        return self.service.SaveRecord(DataServerName='FinCFODataBR', XML=client_xml, Contexto='CODCOLIGADA={}'.format(codcoligada_contexto))
-
-    def get(self, codcoligada, codcfo):
-        primary_key = '{};{}'.format(codcoligada, codcfo)
-        client = self.service.ReadRecord(
-            DataServerName='FinCFODataBR', PrimaryKey=primary_key, Contexto='')
-        return objectify.fromstring(client)
+        }, 'CODCOLIGADA={}'.format(codcoligada_contexto))
