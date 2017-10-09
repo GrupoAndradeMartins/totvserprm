@@ -57,8 +57,8 @@ class Billet(BaseApi):
                     'NUMERODOCUMENTO': -1,
                     'NFOUDUP': 0,
                     'CLASSIFICACAO': 0,
-                    'PAGREC': 0,
-                    'STATUSLAN': 0,
+                    'PAGREC': 1,
+                    'STATUSLAN': 1,
                     'CODTDO': kwargs.get('tipo_documento'),
                     'DATAVENCIMENTO': kwargs.get('data_vencimento'),
                     'DATAEMISSAO': "{:%d/%m/%Y %H:%M:%S}".format(datetime.now()),
@@ -71,6 +71,7 @@ class Billet(BaseApi):
                     'TIPOCONTABILLAN': 1,
                     'CODMOEVALORORIGINAL': 'R$',
                     'VALORSERVICO': 0,
+                    'NUMLOTECONTABIL': kwargs.get('lote_contabil')
                 }
             }
         }, 'CODCOLIGADA={}'.format(codcoligada_contexto))
