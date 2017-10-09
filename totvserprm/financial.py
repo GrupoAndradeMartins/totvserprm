@@ -6,11 +6,6 @@ from baseapi import BaseApi
 class Client(BaseApi):
     dataservername = 'FinCFODataBR'
     def create(self,**kwargs):
-        # codigo de coligada para o contexto, diferente do dataset
-        codcoligada_contexto = kwargs.get('codcoligada_contexto')
-        if not codcoligada_contexto:
-            codcoligada_contexto =  kwargs.get('codcoligada')
-
         return super(Client, self).create({
             'NewDataSet': {
                 'FCFO': {
@@ -38,17 +33,12 @@ class Client(BaseApi):
                     'PESSOAFISOUJUR': kwargs.get('categoria'),
                 }
             }
-        }, 'CODCOLIGADA={}'.format(codcoligada_contexto))
+        }, 'CODCOLIGADA={}'.format(kwargs.get('codcoligada')))
 
 
 class Billet(BaseApi):
     dataservername = 'FinLanBoletoData'
     def create(self,**kwargs):
-        # codigo de coligada para o contexto, diferente do dataset
-        codcoligada_contexto = kwargs.get('codcoligada_contexto')
-        if not codcoligada_contexto:
-            codcoligada_contexto =  kwargs.get('codcoligada')
-
         return super(Billet, self).create({
             'NewDataSet': {
                 'FLAN': {
@@ -68,10 +58,14 @@ class Billet(BaseApi):
                     'CODFILIAL': kwargs.get('codfilial'),
                     'SERIEDOCUMENTO': kwargs.get('serie_documento'),
                     'CODCXA': kwargs.get('conta'),
-                    'TIPOCONTABILLAN': 1,
                     'CODMOEVALORORIGINAL': 'R$',
-                    'VALORSERVICO': 0,
-                    'NUMLOTECONTABIL': kwargs.get('lote_contabil')
+                    'NUMLOTECONTABIL': 0,
+                    'NUMEROCONTABIL': 0,
+                    'NUMCONTABILBX': 0,
+                    'TIPOCONTABILLAN': 0,
+                    'FILIALCONTABIL': 1,
+                    'HISTORICO': kwargs.get('historico'),
+                    'CODCCUSTO': kwargs.get('centro_custo')
                 }
             }
-        }, 'CODCOLIGADA={}'.format(codcoligada_contexto))
+        }, 'CODCOLIGADA={}'.format(kwargs.get('codcoligada')))
