@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from datetime import datetime
 from baseapi import BaseApi
 
 
@@ -35,6 +36,41 @@ class Client(BaseApi):
                     'NOMEFANTASIA': kwargs.get('nome'),
                     'PAGREC': kwargs.get('classificacao'),
                     'PESSOAFISOUJUR': kwargs.get('categoria'),
+                }
+            }
+        }, 'CODCOLIGADA={}'.format(codcoligada_contexto))
+
+
+class Billet(BaseApi):
+    dataservername = 'FinLanBoletoData'
+    def create(self,**kwargs):
+        # codigo de coligada para o contexto, diferente do dataset
+        codcoligada_contexto = kwargs.get('codcoligada_contexto')
+        if not codcoligada_contexto:
+            codcoligada_contexto =  kwargs.get('codcoligada')
+
+        return super(Billet, self).create({
+            'NewDataSet': {
+                'FLAN': {
+                    'CODCOLIGADA': kwargs.get('codcoligada'),
+                    'IDLAN': -1,
+                    'NUMERODOCUMENTO': -1,
+                    'NFOUDUP': 0,
+                    'CLASSIFICACAO': 0,
+                    'PAGREC': 0,
+                    'STATUSLAN': 0,
+                    'CODTDO': kwargs.get('tipo_documento'),
+                    'DATAVENCIMENTO': kwargs.get('data_vencimento'),
+                    'DATAEMISSAO': "{:%d/%m/%Y %H:%M:%S}".format(datetime.now()),
+                    'VALORORIGINAL': kwargs.get('valor'),
+                    'CODCOLCFO': kwargs.get('codcoligada'),
+                    'CODCFO': kwargs.get('codcliente'),
+                    'CODFILIAL': kwargs.get('codfilial'),
+                    'SERIEDOCUMENTO': kwargs.get('serie_documento'),
+                    'CODCXA': kwargs.get('conta'),
+                    'TIPOCONTABILLAN': 1,
+                    'CODMOEVALORORIGINAL': 'R$',
+                    'VALORSERVICO': 0,
                 }
             }
         }, 'CODCOLIGADA={}'.format(codcoligada_contexto))
