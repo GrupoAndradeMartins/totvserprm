@@ -43,12 +43,12 @@ class Billet(BaseApi):
             'NewDataSet': {
                 'FLAN': {
                     'CODCOLIGADA': kwargs.get('codcoligada'),
-                    'IDLAN': -1,
+                    'IDLAN': kwargs.get('id_lancamento'), 
                     'NUMERODOCUMENTO': -1,
                     'NFOUDUP': 0,
                     'CLASSIFICACAO': 0,
                     'PAGREC': 1,
-                    'STATUSLAN': 1,
+                    'STATUSLAN': 0,
                     'CODTDO': kwargs.get('tipo_documento'),
                     'DATAVENCIMENTO': kwargs.get('data_vencimento'),
                     'DATAEMISSAO': "{:%d/%m/%Y %H:%M:%S}".format(datetime.now()),
@@ -65,7 +65,9 @@ class Billet(BaseApi):
                     'TIPOCONTABILLAN': 0,
                     'FILIALCONTABIL': 1,
                     'HISTORICO': kwargs.get('historico'),
-                    'CODCCUSTO': kwargs.get('centro_custo')
+                    'CODCCUSTO': kwargs.get('centro_custo'),
+		    'CODTCF': '000',
+		    'CODCOLSACADO': '0'
                 }
             }
         }, 'CODCOLIGADA={}'.format(kwargs.get('codcoligada')))
