@@ -57,7 +57,7 @@ client.create(
 Exemplo para criação de um boleto:
 ```python
 from datetime import datetime
-from totvserprm.financial import Client, Billet
+from totvserprm.financial import Billet
 
 server = '192.168.1.100:8051'
 username = 'admin'
