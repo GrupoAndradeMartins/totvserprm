@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime
 from baseapi import BaseApi
-import uuid
-
+from totvserprm.utils import number_doc
 
 class Client(BaseApi):
     dataservername = 'FinCFODataBR'
@@ -45,7 +44,7 @@ class Billet(BaseApi):
                 'FLAN': {
                     'CODCOLIGADA': kwargs.get('codcoligada'),
                     'IDLAN': -1,
-                    'NUMERODOCUMENTO': str(uuid.uuid4()),
+                    'NUMERODOCUMENTO': number_doc(),
                     'NFOUDUP': 0,
                     'CLASSIFICACAO': 0,
                     'PAGREC': 1,
