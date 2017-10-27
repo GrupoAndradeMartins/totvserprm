@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime
 from baseapi import BaseApi
-from totvserprm.utils import number_doc
+
 
 class Client(BaseApi):
     dataservername = 'FinCFODataBR'
@@ -34,7 +34,7 @@ class Client(BaseApi):
                     'CODTCF': kwargs.get('tipo_cliente'),
                 }
             }
-        }, 'CODCOLIGADA={}'.format(kwargs.get('codcoligada')))
+        }, 'CODCOLIGADA={}'.format(kwargs.get('codcoligada_contexto')))
 
 
 class Billet(BaseApi):
@@ -45,13 +45,12 @@ class Billet(BaseApi):
                 'FLAN': {
                     'CODCOLIGADA': kwargs.get('codcoligada'),
                     'IDLAN': -1,
-                    'NUMERODOCUMENTO': number_doc(),
                     'PAGREC': kwargs.get('classificacao'),
                     'CODTDO': kwargs.get('tipo_documento'),
                     'DATAVENCIMENTO': kwargs.get('data_vencimento'),
                     'DATAEMISSAO': "{:%d/%m/%Y %H:%M:%S}".format(datetime.now()),
                     'VALORORIGINAL': kwargs.get('valor'),
-                    'CODCOLCFO': kwargs.get('codcoligada'),
+                    'CODCOLCFO': kwargs.get('codcoligada_cfo'),
                     'CODCFO': kwargs.get('codcliente'),
                     'CODFILIAL': kwargs.get('codfilial'),
                     'SERIEDOCUMENTO': '@@@',
@@ -61,4 +60,4 @@ class Billet(BaseApi):
                     'CODCCUSTO': kwargs.get('centro_custo'),
                 },
             }
-        }, 'CODCOLIGADA={}'.format(kwargs.get('codcoligada')))
+        }, 'CODCOLIGADA={}'.format(kwargs.get('codcoligada_contexto')))
