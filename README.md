@@ -39,7 +39,8 @@ client = Client(server, username, password)
 client.create(
   ativo=True,
   codexterno=1,
-  codcoligada=1,
+  codcoligada=0,
+  codcoligada_contexto=1,
   cpf_cnpj='11781328110',
   tipo_rua=1,
   tipo_bairro=1,
@@ -48,7 +49,7 @@ client.create(
   numero=695,
   estado='MG',
   cidade='Belo Horizonte',
-  codigo_municipio=3106200,
+  codigo_municipio=06200,
   pais=1,
   data_nascimento=datetime(1990,5,14),
   nome='Cliente Teste Vetrol',
@@ -70,6 +71,8 @@ password = 'admin'
 boleto = Billet(server, username, password)
 boleto.create(
   codcoligada=1,
+  codcoligada_contexto=1,
+  codcoligada_cfo=0,
   data_vencimento=datetime(2017,10,30),
   valor=100,
   codcliente='0000470',
