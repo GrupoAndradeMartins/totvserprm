@@ -84,3 +84,21 @@ boleto.create(
   centro_custo='01.019'
 )
 ```
+
+
+### Exemplo de consulta SQL:
+```python
+from totvserprm.retrieve import ConsultSQL
+
+server = '192.168.1.100:8051'
+username = 'admin'
+password = 'admin'
+
+consultsql = ConsultSQL(server, username, password)
+consultsql.get(
+  codcoligada=0,
+  codsistema='F',
+  codsentenca='CODIGO_CONSULTA',
+  parameters={'PARAMETRO_1': 'VALOR_1', 'PARAMETRO_2': 'VALOR_1'}
+)
+```
