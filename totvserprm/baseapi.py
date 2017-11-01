@@ -2,6 +2,7 @@
 from auth import create_service
 from dicttoxml import dicttoxml
 from lxml import objectify
+from totvserprm.utils import normalize_xml
 
 
 class BaseApi(object):
@@ -18,4 +19,5 @@ class BaseApi(object):
         primary_key = '{};{}'.format(codcoligada, id)
         return_from_api = self.service.ReadRecord(
             DataServerName=self.dataservername, PrimaryKey=primary_key, Contexto='CODCOLIGADA={}'.format(codcoligada))
+        return_from_api = normalize_xml(return_from_api)
         return objectify.fromstring(return_from_api)
