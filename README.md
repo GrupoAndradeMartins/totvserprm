@@ -5,6 +5,34 @@ API para acesso aos Webservices do TOTVS ERP RM.
 
 pip install totverprm
 
+### Exemplo para retornar dados de um cliente:
+```python
+from totvserprm.financial import Client
+
+server = '192.168.1.100:8051'
+username = 'admin'
+password = 'admin'
+
+client = Client(server, username, password)
+
+client_1 = client.get(codcoligada=0, id='0000496')
+
+```
+
+### Exemplo para retornar dados de todos clientes:
+```python
+from totvserprm.financial import Client
+
+server = '192.168.1.100:8051'
+username = 'admin'
+password = 'admin'
+
+client = Client(server, username, password)
+
+clients = client.all(codcoligada=0)
+
+```
+
 ### Exemplo para criação de um aluno:
 ```python
 from datetime import datetime
