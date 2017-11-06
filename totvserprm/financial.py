@@ -68,12 +68,12 @@ class Billet(BaseApi):
                     'IDRATCCU': -1,
                     'CODCOLIGADA': kwargs.get('codcoligada'),
                     'IDLAN': -1,
-                    'CODCCUSTO': '01.013',
+                    'CODCCUSTO': kwargs.get('centro_custo'),
                     'VALOR': kwargs.get('valor'),
-                    'PERCENTUAL': '100,0000',
-                    'CODCOLNATFINANCEIRA': 0,
-                    'CODNATFINANCEIRA': '01.001.0001',
-                    'DESCRICAO': 'Crédito Aluno'
+                    'PERCENTUAL': kwargs.get('percentual_rateio'),
+                    'CODCOLNATFINANCEIRA': kwargs.get('codcoligada_fin'),
+                    'CODNATFINANCEIRA': kwargs.get('codnatfinanceira'),
+                    'DESCRICAO': kwargs.get('descricao_rateio'),
                 }
             }
         }, 'CODCOLIGADA={}'.format(kwargs.get('codcoligada_contexto')))
