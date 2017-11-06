@@ -41,7 +41,7 @@ client.create(
   codexterno=1,
   codcoligada=0,
   codcoligada_contexto=1,
-  cpf_cnpj='11781328110', # Sem formatação
+  cpf_cnpj='11781328110', # Sem formatação
   tipo_rua=1, # RUA = 1 / AVENIDA = 6
   tipo_bairro=1, # BAIRRO = 1
   bairro='Belvedere',
@@ -49,12 +49,12 @@ client.create(
   numero=695,
   estado='MG', # EX = Exterior
   cidade='Belo Horizonte',
-  codigo_municipio=06200, # Ultimos 5 digitos do codigo do ibge do município
+  codigo_municipio=06200, # Ultimos 5 digitos do codigo do ibge do município
   pais=1, # 1 = Brasil, 2 = Portugal, 11 = Angola
   data_nascimento=datetime(1990,5,14),
   nome='Cliente Teste Vetrol',
   classificacao=1, # 1 = Cliente, 2 = Fornecedor, 3 = Ambos
-  categoria='F', # F = Pessoa Física, J = Pessoa Jurídica
+  categoria='F', # F = Pessoa Física, J = Pessoa Jurídica
   cep='30320-300'
 )
 ```
@@ -73,15 +73,20 @@ boleto.create(
   codcoligada=1,
   codcoligada_contexto=1,
   codcoligada_cfo=0,
+  codcoligada_fin=0,
   data_vencimento=datetime(2017,10,30),
-  valor='100,55', # Enviar string com separação por vírgula
+  valor='100,55', # Enviar string com separação por vírgula
   codcliente='0000470',
   codfilial=1,
   classificacao=1, # 1 = Receber, 2 = Pagar
-  tipo_documento='999', # 999 = Taxa de adesão
+  tipo_documento='999', # 999 = Taxa de adesão
   conta=1,
-  historico='Teste', # Descrição
-  centro_custo='01.019'
+  historico='Teste', # Descrição
+  centro_custo='01.019',
+  codnatfinanceira='01.001.0001',
+  percentual_rateio='100,00', # Enviar string com separação por vírgula
+  descricao_rateio='Crédito Aluno',
+  id_vendedor=1400
 )
 ```
 
