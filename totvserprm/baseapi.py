@@ -22,9 +22,9 @@ class BaseApi(object):
         return_from_api = normalize_xml(return_from_api)
         return objectify.fromstring(return_from_api)
 
-    def all(self, codcoligada, codfilial):
+    def all(self, codcoligada):
         return_from_api = self.service.ReadView(
-            DataServerName=self.dataservername, Filtro='{}={}'.format(
-            codcoligada, codfilial), Contexto='CODCOLIGADA={}'.format(codcoligada))
+            DataServerName=self.dataservername, Filtro='CODCOLIGADA={}'.format(
+            codcoligada), Contexto='CODCOLIGADA={}'.format(codcoligada))
         return_from_api = normalize_xml(return_from_api)
         return objectify.fromstring(return_from_api)
