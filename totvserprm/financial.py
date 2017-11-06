@@ -75,3 +75,7 @@ class Billet(BaseApi):
                 }
             }
         }, 'CODCOLIGADA={}'.format(kwargs.get('codcoligada_contexto')))
+
+
+class CostCenter(BaseApi):
+    dataservername = 'CtbCCustoData'
