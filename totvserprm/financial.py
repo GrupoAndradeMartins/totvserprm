@@ -59,5 +59,21 @@ class Billet(BaseApi):
                     'HISTORICO': kwargs.get('historico'),
                     'CODCCUSTO': kwargs.get('centro_custo'),
                 },
+                'FLANCOMPL':{
+                    'CODCOLIGADA': kwargs.get('codcoligada'),
+                    'IDLAN': -1,
+                    'IDVENDEDOR': kwargs.get('id_vendedor')
+                },
+                'FLANRATCCU':{
+                    'IDRATCCU': -1,
+                    'CODCOLIGADA': kwargs.get('codcoligada'),
+                    'IDLAN': -1,
+                    'CODCCUSTO': '01.013',
+                    'VALOR': kwargs.get('valor'),
+                    'PERCENTUAL': '100,0000',
+                    'CODCOLNATFINANCEIRA': 0,
+                    'CODNATFINANCEIRA': '01.001.0001',
+                    'DESCRICAO': 'Crédito Aluno'
+                }
             }
         }, 'CODCOLIGADA={}'.format(kwargs.get('codcoligada_contexto')))
