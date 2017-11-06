@@ -84,8 +84,6 @@ boleto.create(
   historico='Teste', # Descrição
   centro_custo='01.019',
   codnatfinanceira='01.001.0001',
-  percentual_rateio='100,00', # Enviar string com separação por vírgula
-  descricao_rateio='Crédito Aluno',
   id_vendedor=1400
 )
 ```
