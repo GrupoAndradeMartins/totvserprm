@@ -70,10 +70,8 @@ class Billet(BaseApi):
                     'IDLAN': -1,
                     'CODCCUSTO': kwargs.get('centro_custo'),
                     'VALOR': kwargs.get('valor'),
-                    'PERCENTUAL': kwargs.get('percentual_rateio'),
                     'CODCOLNATFINANCEIRA': kwargs.get('codcoligada_fin'),
                     'CODNATFINANCEIRA': kwargs.get('codnatfinanceira'),
-                    'DESCRICAO': kwargs.get('descricao_rateio'),
                 }
             }
         }, 'CODCOLIGADA={}'.format(kwargs.get('codcoligada_contexto')))
