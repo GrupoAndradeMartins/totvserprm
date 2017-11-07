@@ -28,6 +28,7 @@ class Client(BaseApi):
                     'PAIS': kwargs.get('cod_pais'),
                     'DTNASCIMENTO': '{:%Y-%m-%d}T03:00:00.000'.format(kwargs.get('data_nascimento')),
                     'NOME': kwargs.get('nome'),
+                    'EMAIL': kwargs.get('email'),
                     'NOMEFANTASIA': kwargs.get('nome'),
                     'PAGREC': kwargs.get('classificacao'),
                     'PESSOAFISOUJUR': kwargs.get('categoria'),
