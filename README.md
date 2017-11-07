@@ -108,7 +108,6 @@ boleto.create(
   codfilial=1,
   classificacao=1, # 1 = Receber, 2 = Pagar
   tipo_documento='999', # 999 = Taxa de adesão
-  conta=1,
   historico='Teste', # Descrição
   centro_custo='01.019',
   codnatfinanceira='01.001.0001',
