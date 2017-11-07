@@ -55,7 +55,6 @@ class Billet(BaseApi):
                     'CODCFO': kwargs.get('codcliente'),
                     'CODFILIAL': kwargs.get('codfilial'),
                     'SERIEDOCUMENTO': '@@@',
-                    'CODCXA': kwargs.get('conta'),
                     'CODMOEVALORORIGINAL': 'R$',
                     'HISTORICO': kwargs.get('historico'),
                     'CODCCUSTO': kwargs.get('centro_custo'),
