@@ -21,7 +21,7 @@ class BaseApi(object):
             custom_class = ClassFactory(self.__class__.__name__, ['codcoligada', 'id'])
             return custom_class(codcoligada=codcoligada, id=element_id)
         else:
-            raise ApiError('Error trying to create {}'.format(self.__class__.__name__))
+            raise ApiError('Error trying to create {}:\n{}'.format(self.__class__.__name__, response))
 
     def get(self, codcoligada, id):
         primary_key = '{};{}'.format(codcoligada, id)
