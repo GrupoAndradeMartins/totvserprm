@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 from auth import create_service
 from dicttoxml import dicttoxml
 from lxml import objectify
-from totvserprm.utils import normalize_xml
-
+from totvserprm.utils import ClassFactory, normalize_xml
+from totvserprm.exceptions import ApiError
 
 class BaseApi(object):
     dataservername = ''
@@ -13,7 +14,14 @@ class BaseApi(object):
 
     def create(self, dict, context):
         xml = dicttoxml(dict, attr_type=False)
-        return self.service.SaveRecord(DataServerName=self.dataservername, XML=xml, Contexto=context)
+        response = self.service.SaveRecord(DataServerName=self.dataservername, XML=xml, Contexto=context)
+        if len(response.split(';')) == 2:
+            codcoligada = response.split(';')[0]
+            element_id = response.split(';')[1]
+            custom_class = ClassFactory(self.__class__.__name__, ['codcoligada', 'id'])
+            return custom_class(codcoligada=codcoligada, id=element_id)
+        else:
+            raise ApiError('Error trying to create {}'.format(self.__class__.__name__))
 
     def get(self, codcoligada, id):
         primary_key = '{};{}'.format(codcoligada, id)
