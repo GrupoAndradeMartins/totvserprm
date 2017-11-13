@@ -4,7 +4,7 @@ from auth import create_service
 from dicttoxml import dicttoxml
 from lxml import objectify
 from totvserprm.utils import ClassFactory, normalize_xml
-from totvserprm.exceptions import ApiError
+from totvserprm.exceptions import ApiError, ApiObjectDoesNotExist
 
 
 class BaseApi(object):
@@ -32,7 +32,11 @@ class BaseApi(object):
         return_from_api = self.service.ReadRecord(
             DataServerName=self.dataservername, PrimaryKey=primary_key, Contexto='CODCOLIGADA={}'.format(codcoligada))
         return_from_api = normalize_xml(return_from_api)
-        return objectify.fromstring(return_from_api)
+        return_from_api = objectify.fromstring(return_from_api)
+        if (return_from_api.__dict__):
+            return return_from_api
+        else:
+            raise ApiObjectDoesNotExist('{} does not exist'.format(self.__class__.__name__))
 
     def all(self, codcoligada):
         return_from_api = self.service.ReadView(
