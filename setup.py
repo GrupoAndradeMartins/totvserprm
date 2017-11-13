@@ -9,7 +9,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='totvserprm',
-    version='1.8.2',
+    version='1.8.3',
     description='API para webservices do TOTVS ERP RM',
     url='https://github.com/grupoandrademartins/totvserprm',
     author='Rafael G. Winter, Túlio Cesar Martins',
