@@ -15,6 +15,8 @@ class Student(BaseApi):
                     'NATURALIDADE': kwargs.get('naturalidade'),
                     'NOME': kwargs.get('nome'),
                     'RA': kwargs.get('ra'),
+                    'CODCFO': kwargs.get('codcliente'),
+                    'CODCOLCFO': kwargs.get('codcoligada_cliente')
                 }
             }
         }, 'CODCOLIGADA={}'.format(kwargs.get('codcoligada')))
