@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from auth import create_service_sql
 from dicttoxml import dicttoxml
 from lxml import objectify
+from totvserprm.auth import create_service_sql
 from totvserprm.utils import normalize_xml
 
 
