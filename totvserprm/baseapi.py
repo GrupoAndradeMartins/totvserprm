@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from auth import create_service
 from dicttoxml import dicttoxml
 from lxml import objectify
+from totvserprm.auth import create_service
 from totvserprm.utils import ClassFactory, normalize_xml
 from totvserprm.exceptions import ApiError, ApiObjectDoesNotExist
 
