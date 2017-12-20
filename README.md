@@ -49,8 +49,26 @@ stundet.create(
   data_nascimento=datetime(1992, 2, 3, 4, 5),
   estado_natal='MG',
   naturalidade='Belo Horizonte',
+  cpf='11781328110',
   nome='Fulano de tal',
-  ra=35
+  sexo='Masculino',
+  tipo_rua=1, # RUA = 1 / AVENIDA = 6
+  tipo_bairro=1, # BAIRRO = 1
+  bairro='Belvedere',
+  rua='Rua Professor Pedro Aleixo',
+  numero=695,
+  estado='MG', # EX = Exterior
+  cidade='Belo Horizonte',
+  codigo_municipio=06200, # Ultimos 5 digitos do codigo do ibge do município
+  pais='Brasil',
+  cep='30320-300',
+  codcurso='00001',
+  codcliente='0000001',
+  codcoligada_cliente=0,
+  email='teste@vetrol.com.br',
+  telefone1='(32) 99999-9999',
+  telefone2='(31) 99999-9998',
+  telefone3='(31) 99999-9997'
 )
 ```
 
@@ -69,6 +87,7 @@ client.create(
   codexterno=1,
   codcoligada=0,
   codcoligada_contexto=1,
+  tipo_cliente='000', # 000 para Aluno
   cpf_cnpj='11781328110', # Sem formatação
   tipo_rua=1, # RUA = 1 / AVENIDA = 6
   tipo_bairro=1, # BAIRRO = 1
@@ -80,11 +99,13 @@ client.create(
   codigo_municipio=06200, # Ultimos 5 digitos do codigo do ibge do município
   pais=1, # 1 = Brasil, 2 = Portugal, 11 = Angola
   data_nascimento=datetime(1990,5,14),
-  nome='Cliente Teste Vetrol',
+  nome='Fulano de tal',
   classificacao=1, # 1 = Cliente, 2 = Fornecedor, 3 = Ambos
   categoria='F', # F = Pessoa Física, J = Pessoa Jurídica
-  cep='30320-300'
+  cep='30320-300',
+  email='teste@vetrol.com.br',
 )
+
 ```
 
 ### Exemplo para criação de um boleto:

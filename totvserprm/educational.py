@@ -16,9 +16,32 @@ class Student(BaseApi):
                     'ESTADONATAL': kwargs.get('estado_natal'),
                     'NATURALIDADE': kwargs.get('naturalidade'),
                     'NOME': kwargs.get('nome'),
-                    'RA': kwargs.get('ra'),
+                    'CPF': kwargs.get('cpf'),
+                    'RA': 0,
                     'CODCFO': kwargs.get('codcliente'),
-                    'CODCOLCFO': kwargs.get('codcoligada_cliente')
+                    'CODCOLCFO': kwargs.get('codcoligada_cliente'),
+                    'CODTIPORUA': kwargs.get('tipo_rua'),
+                    'CODTIPOBAIRRO': kwargs.get('tipo_bairro'),
+                    'BAIRRO': kwargs.get('bairro'),
+                    'RUA': kwargs.get('rua'),
+                    'NUMERO': kwargs.get('numero'),
+                    'CEP': kwargs.get('cep'),
+                    'ESTADO': kwargs.get('estado'),
+                    'CIDADE': kwargs.get('cidade'),
+                    'CODMUNICIPIO': kwargs.get('codigo_municipio'),
+                    'PAIS': kwargs.get('pais'),
+                    'SEXO': kwargs.get('sexo'),
+                    'CODTIPOALUNO': '10',
+                    'EMAIL': kwargs.get('email'),
+                    'TELEFONE1': kwargs.get('telefone1'),
+                    'TELEFONE2': kwargs.get('telefone2'),
+                    'TELEFONE3': kwargs.get('telefone3'),
+                },
+                'SHabilitacaoAluno': {
+                    'CODCOLIGADA': kwargs.get('codcoligada'),
+                    'IDHABILITACAOFILIAL': 1,
+                    'RA': 0,
+                    'CODCURSO': kwargs.get('codcurso')
                 }
             }
         }, 'CODCOLIGADA={}'.format(kwargs.get('codcoligada')))
