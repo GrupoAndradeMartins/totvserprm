@@ -5,7 +5,8 @@ from totvserprm.baseapi import BaseApi
 
 class Client(BaseApi):
     dataservername = 'FinCFODataBR'
-    def create(self,**kwargs):
+
+    def create(self, **kwargs):
         return super(Client, self).create({
             'NewDataSet': {
                 'FCFO': {
@@ -26,7 +27,8 @@ class Client(BaseApi):
                     'CIDADE': kwargs.get('cidade'),
                     'CODMUNICIPIO': kwargs.get('codigo_municipio'),
                     'PAIS': kwargs.get('cod_pais'),
-                    'DTNASCIMENTO': '{:%Y-%m-%d}T03:00:00.000'.format(kwargs.get('data_nascimento')),
+                    'DTNASCIMENTO': '{:%Y-%m-%d}T03:00:00.000'.format(
+                        kwargs.get('data_nascimento')),
                     'NOME': kwargs.get('nome'),
                     'EMAIL': kwargs.get('email'),
                     'NOMEFANTASIA': kwargs.get('nome'),
@@ -40,7 +42,8 @@ class Client(BaseApi):
 
 class Billet(BaseApi):
     dataservername = 'FinLanBoletoData'
-    def create(self,**kwargs):
+
+    def create(self, **kwargs):
         return super(Billet, self).create({
             'FinLAN': {
                 'FLAN': {
@@ -49,7 +52,8 @@ class Billet(BaseApi):
                     'PAGREC': kwargs.get('classificacao'),
                     'CODTDO': kwargs.get('tipo_documento'),
                     'DATAVENCIMENTO': kwargs.get('data_vencimento'),
-                    'DATAEMISSAO': "{:%d/%m/%Y %H:%M:%S}".format(datetime.now()),
+                    'DATAEMISSAO': "{:%d/%m/%Y %H:%M:%S}".format(
+                        datetime.now()),
                     'VALORORIGINAL': kwargs.get('valor'),
                     'CODCOLCFO': kwargs.get('codcoligada_cfo'),
                     'CODCFO': kwargs.get('codcliente'),
@@ -59,12 +63,12 @@ class Billet(BaseApi):
                     'HISTORICO': kwargs.get('historico'),
                     'CODCCUSTO': kwargs.get('centro_custo'),
                 },
-                'FLANCOMPL':{
+                'FLANCOMPL': {
                     'CODCOLIGADA': kwargs.get('codcoligada'),
                     'IDLAN': -1,
                     'IDVENDEDOR': kwargs.get('id_vendedor')
                 },
-                'FLANRATCCU':{
+                'FLANRATCCU': {
                     'IDRATCCU': -1,
                     'CODCOLIGADA': kwargs.get('codcoligada'),
                     'IDLAN': -1,
