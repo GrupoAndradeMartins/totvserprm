@@ -67,7 +67,8 @@ class Billet(BaseApi):
                     'CODCOLIGADA': kwargs.get('codcoligada'),
                     'IDLAN': -1,
                     'IDVENDEDOR': kwargs.get('id_vendedor'),
-                    'CCMAILVENDEDOR': kwargs.get('email_vendedor')
+                    'CCMAILVENDEDOR': kwargs.get('email_vendedor'),
+                    'ENVIA_IUGU': kwargs.get('cobrar_matricula')
                 },
                 'FLANRATCCU': {
                     'IDRATCCU': -1,
