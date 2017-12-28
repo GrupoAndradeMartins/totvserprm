@@ -37,6 +37,11 @@ class Student(BaseApi):
                     'TELEFONE2': kwargs.get('telefone2'),
                     'TELEFONE3': kwargs.get('telefone3'),
                 },
+                'SAlunoCompl': {
+                    'CODCOLIGADA': kwargs.get('codcoligada'),
+                    'RA': 0,
+                    'PLANOPGTO': kwargs.get('planopagamento'),
+                },
                 'SHabilitacaoAluno': {
                     'CODCOLIGADA': kwargs.get('codcoligada'),
                     'IDHABILITACAOFILIAL': 1,
