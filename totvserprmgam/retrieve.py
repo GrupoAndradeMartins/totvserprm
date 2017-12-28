@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from lxml import objectify
-from totvserprm.auth import create_service_sql
-from totvserprm.utils import normalize_xml
+from totvserprmgam.auth import create_service_sql
+from totvserprmgam.utils import normalize_xml
 
 
 class ConsultSQL(object):

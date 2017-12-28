@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime
-from totvserprm.baseapi import BaseApi
+from totvserprmgam.baseapi import BaseApi
 
 
 class Client(BaseApi):

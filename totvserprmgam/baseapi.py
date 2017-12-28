@@ -2,9 +2,9 @@
 from __future__ import unicode_literals
 from dicttoxml import dicttoxml
 from lxml import objectify
-from totvserprm.auth import create_service
-from totvserprm.utils import ClassFactory, normalize_xml
-from totvserprm.exceptions import ApiError, ApiObjectDoesNotExist
+from totvserprmgam.auth import create_service
+from totvserprmgam.utils import ClassFactory, normalize_xml
+from totvserprmgam.exceptions import ApiError, ApiObjectDoesNotExist
 
 
 class BaseApi(object):

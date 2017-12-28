@@ -8,8 +8,8 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='totvserprm',
-    version='1.11.2',
+    name='totvserprmgam',
+    version='1.0.0',
     description='API para webservices do TOTVS ERP RM',
     url='https://github.com/grupoandrademartins/totvserprm',
     author='Rafael G. Winter, Túlio Cesar Martins',

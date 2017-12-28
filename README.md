@@ -3,11 +3,11 @@ API para acesso aos Webservices do TOTVS ERP RM.
 
 ## Instalação
 
-pip install totverprm
+pip install totvserprmgam
 
 ### Exemplo para retornar dados de um cliente:
 ```python
-from totvserprm.financial import Client
+from totvserprmgam.financial import Client
 
 server = '192.168.1.100:8051'
 username = 'admin'
@@ -21,7 +21,7 @@ client_1 = client.get(codcoligada=0, id='0000496')
 
 ### Exemplo para retornar dados de todos clientes:
 ```python
-from totvserprm.financial import Client
+from totvserprmgam.financial import Client
 
 server = '192.168.1.100:8051'
 username = 'admin'
@@ -36,7 +36,7 @@ clients = client.all(codcoligada=0)
 ### Exemplo para criação de um aluno:
 ```python
 from datetime import datetime
-from totvserprm.educational import Student
+from totvserprmgam.educational import Student
 
 server = '192.168.1.100:8051'
 username = 'admin'
@@ -75,7 +75,7 @@ stundet.create(
 ### Exemplo para criação de um cliente:
 ```python
 from datetime import datetime
-from totvserprm.financial import Client
+from totvserprmgam.financial import Client
 
 server = '192.168.1.100:8051'
 username = 'admin'
@@ -111,7 +111,7 @@ client.create(
 ### Exemplo para criação de um boleto:
 ```python
 from datetime import datetime
-from totvserprm.financial import Billet
+from totvserprmgam.financial import Billet
 
 server = '192.168.1.100:8051'
 username = 'admin'
@@ -139,7 +139,7 @@ boleto.create(
 
 ### Exemplo de consulta SQL:
 ```python
-from totvserprm.retrieve import ConsultSQL
+from totvserprmgam.retrieve import ConsultSQL
 
 server = '192.168.1.100:8051'
 username = 'admin'

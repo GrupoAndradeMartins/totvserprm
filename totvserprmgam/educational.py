@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from totvserprm.baseapi import BaseApi
+from totvserprmgam.baseapi import BaseApi
 
 
 class Student(BaseApi):
