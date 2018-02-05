@@ -48,7 +48,7 @@ class Student(BaseApi):
                     },
                     'SHabilitacaoAluno': {
                         'CODCOLIGADA': kwargs.get('codcoligada'),
-                        'IDHABILITACAOFILIAL': 1,
+                        'IDHABILITACAOFILIAL': 383,
                         'RA': -1,
                         'CODCURSO': kwargs.get('codcurso'),
                         'CODHABILITACAO': 1,
@@ -70,14 +70,17 @@ class Student(BaseApi):
                     },
                     'SAlunoCompl': {
                         'CODCOLIGADA': kwargs.get('codcoligada'),
-                        'RA': 0,
+                        'RA': -1,
                         'PLANOPGTO': kwargs.get('planopagamento'),
+                        'OBSFINANCEIRO': kwargs.get('obsfinanceiro')
                     },
                     'SHabilitacaoAluno': {
                         'CODCOLIGADA': kwargs.get('codcoligada'),
-                        'IDHABILITACAOFILIAL': 1,
-                        'RA': 0,
-                        'CODCURSO': kwargs.get('codcurso')
+                        'IDHABILITACAOFILIAL': 383,
+                        'RA': -1,
+                        'CODCURSO': kwargs.get('codcurso'),
+                        'CODHABILITACAO': 1,
+                        'CODGRADE': 1
                     }
                 }
             }, 'CODCOLIGADA={}'.format(kwargs.get('codcoligada')))

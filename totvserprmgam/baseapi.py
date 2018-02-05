@@ -23,6 +23,13 @@ class BaseApi(object):
             custom_class = ClassFactory(
                 self.__class__.__name__, ['codcoligada', 'id'])
             return custom_class(codcoligada=codcoligada, id=element_id)
+        elif len(response.split(';')) == 3:
+            codcoligada = response.split(';')[0]
+            idhabilitacaofilial = response.split(';')[1]
+            ra = response.split(';')[2]
+            custom_class = ClassFactory(
+                self.__class__.__name__, ['codcoligada', 'idhabilitacaofilial','ra' ])
+            return custom_class(codcoligada=codcoligada, idhabilitacaofilial=idhabilitacaofilial,ra=ra)
         else:
             raise ApiError('Error trying to create {}:\n{}'.format(
                 self.__class__.__name__, response.encode('ascii', 'ignore')))
