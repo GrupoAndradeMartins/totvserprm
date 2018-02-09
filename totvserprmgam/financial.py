@@ -66,7 +66,7 @@ class Billet(BaseApi):
                 'FLANCOMPL': {
                     'CODCOLIGADA': kwargs.get('codcoligada'),
                     'IDLAN': -1,
-                    'IDVENDEDOR': kwargs.get('id_vendedor'),
+                    'VENDEDOR': kwargs.get('id_vendedor'),
                     'CCMAILVENDEDOR': kwargs.get('email_vendedor'),
                     'ENVIA_IUGU': kwargs.get('cobrar_matricula')
                 },

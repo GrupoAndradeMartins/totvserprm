@@ -6,7 +6,7 @@ class Student(BaseApi):
     dataservername = 'EduAlunoData'
 
     def create(self, **kwargs):
-
+        
         if kwargs.get('codpessoa') == -1:
             return super(Student, self).create({
                 'NewDataSet': {
@@ -42,18 +42,18 @@ class Student(BaseApi):
                     },
                     'SAlunoCompl': {
                         'CODCOLIGADA': kwargs.get('codcoligada'),
-                        'RA': -1,
+                        'RA': 0,
                         'PLANOPGTO': kwargs.get('planopagamento'),
                         'OBSFINANCEIRO': kwargs.get('obsfinanceiro')
-                    },
-                    'SHabilitacaoAluno': {
-                        'CODCOLIGADA': kwargs.get('codcoligada'),
-                        'IDHABILITACAOFILIAL': 383,
-                        'RA': -1,
-                        'CODCURSO': kwargs.get('codcurso'),
-                        'CODHABILITACAO': 1,
-                        'CODGRADE': 1
                     }
+                    # 'SHabilitacaoAluno': {
+                    #     'CODCOLIGADA': kwargs.get('codcoligada'),
+                    #     'IDHABILITACAOFILIAL': 383,
+                    #     'RA': -1,
+                    #     'CODCURSO': kwargs.get('codcurso'),
+                    #     'CODHABILITACAO': 1,
+                    #     'CODGRADE': 1
+                    # }
                 }
             }, 'CODCOLIGADA={}'.format(kwargs.get('codcoligada')))
         else:
@@ -70,17 +70,17 @@ class Student(BaseApi):
                     },
                     'SAlunoCompl': {
                         'CODCOLIGADA': kwargs.get('codcoligada'),
-                        'RA': -1,
+                        'RA': 0,
                         'PLANOPGTO': kwargs.get('planopagamento'),
                         'OBSFINANCEIRO': kwargs.get('obsfinanceiro')
                     },
-                    'SHabilitacaoAluno': {
-                        'CODCOLIGADA': kwargs.get('codcoligada'),
-                        'IDHABILITACAOFILIAL': 383,
-                        'RA': -1,
-                        'CODCURSO': kwargs.get('codcurso'),
-                        'CODHABILITACAO': 1,
-                        'CODGRADE': 1
-                    }
+                    # 'SHabilitacaoAluno': {
+                    #     'CODCOLIGADA': kwargs.get('codcoligada'),
+                    #     'IDHABILITACAOFILIAL': 383,
+                    #     'RA': -1,
+                    #     'CODCURSO': kwargs.get('codcurso'),
+                    #     'CODHABILITACAO': 1,
+                    #     'CODGRADE': 1
+                    # }
                 }
             }, 'CODCOLIGADA={}'.format(kwargs.get('codcoligada')))
