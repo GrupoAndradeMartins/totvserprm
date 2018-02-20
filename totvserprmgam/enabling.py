@@ -16,7 +16,7 @@ class EnablingStudent(BaseApi):
                 'IDHABILITACAOFILIAL': kwargs.get('idhabilitacaofilial'), 
                 'CODSTATUS': kwargs.get('codstatus'), 
                 'CODCURSO': kwargs.get('codcurso'), 
-                'CODGRADE': 1
+                'CODGRADE': 2018
             }, 
             'SHabilitacaoAlunoCompl': {
                 'IDHABILITACAOFILIAL': kwargs.get('idhabilitacaofilial'), 
