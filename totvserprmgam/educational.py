@@ -39,6 +39,11 @@ class Student(BaseApi):
                         'TELEFONE2': kwargs.get('telefone2'),
                         'TELEFONE3': kwargs.get('telefone3'),
                         'CODPESSOA': kwargs.get('codpessoa'),
+                        'ESTADOCIVIL': kwargs.get('estadocivil'),
+                        'NOMEPAI': kwargs.get('nomepai'),
+                        'NOMEMAE': kwargs.get('nomemae'),
+                        'CARTIDENTIDADE': kwargs.get('cartidentidade'),
+                        'ORGEMISSORIDENT': kwargs.get('orgemissorident')
                     },
                     'SAlunoCompl': {
                         'CODCOLIGADA': kwargs.get('codcoligada'),
