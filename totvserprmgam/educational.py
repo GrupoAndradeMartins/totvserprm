@@ -46,14 +46,6 @@ class Student(BaseApi):
                         'PLANOPGTO': kwargs.get('planopagamento'),
                         'OBSFINANCEIRO': kwargs.get('obsfinanceiro')
                     }
-                    # 'SHabilitacaoAluno': {
-                    #     'CODCOLIGADA': kwargs.get('codcoligada'),
-                    #     'IDHABILITACAOFILIAL': 383,
-                    #     'RA': -1,
-                    #     'CODCURSO': kwargs.get('codcurso'),
-                    #     'CODHABILITACAO': 1,
-                    #     'CODGRADE': 1
-                    # }
                 }
             }, 'CODCOLIGADA={}'.format(kwargs.get('codcoligada')))
         else:
@@ -74,13 +66,5 @@ class Student(BaseApi):
                         'PLANOPGTO': kwargs.get('planopagamento'),
                         'OBSFINANCEIRO': kwargs.get('obsfinanceiro')
                     },
-                    # 'SHabilitacaoAluno': {
-                    #     'CODCOLIGADA': kwargs.get('codcoligada'),
-                    #     'IDHABILITACAOFILIAL': 383,
-                    #     'RA': -1,
-                    #     'CODCURSO': kwargs.get('codcurso'),
-                    #     'CODHABILITACAO': 1,
-                    #     'CODGRADE': 1
-                    # }
                 }
             }, 'CODCOLIGADA={}'.format(kwargs.get('codcoligada')))
