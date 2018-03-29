@@ -62,6 +62,8 @@ class Billet(BaseApi):
                     'CODMOEVALORORIGINAL': 'R$',
                     'HISTORICO': kwargs.get('historico'),
                     'CODCCUSTO': kwargs.get('centro_custo'),
+                    'VALOROP1': kwargs.get('valor_desconto'),
+                    
                 },
                 'FLANCOMPL': {
                     'CODCOLIGADA': kwargs.get('codcoligada'),

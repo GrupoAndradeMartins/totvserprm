@@ -15,6 +15,7 @@ class BaseApi(object):
 
     def create(self, dict, context):
         xml = dicttoxml(dict, attr_type=False)
+        import ipdb;ipdb.set_trace()
         response = self.service.SaveRecord(
             DataServerName=self.dataservername, XML=xml, Contexto=context)
         if len(response.split(';')) == 2:
