@@ -15,7 +15,6 @@ class BaseApi(object):
 
     def create(self, dict, context):
         xml = dicttoxml(dict, attr_type=False)
-        import ipdb;ipdb.set_trace()
         response = self.service.SaveRecord(
             DataServerName=self.dataservername, XML=xml, Contexto=context)
         if len(response.split(';')) == 2:
@@ -32,8 +31,9 @@ class BaseApi(object):
                 self.__class__.__name__, ['codcoligada', 'idhabilitacaofilial','ra' ])
             return custom_class(codcoligada=codcoligada, idhabilitacaofilial=idhabilitacaofilial,ra=ra)
         else:
-            raise ApiError('Error trying to create {}:\n{}'.format(
-                self.__class__.__name__, response.encode('ascii', 'ignore')))
+            custom_class = ClassFactory(
+                self.__class__.__name__, ['error', 'xml'])
+            return custom_class(error=response.encode('ascii', 'ignore'), xml=xml)
 
     def get(self, codcoligada, id):
         primary_key = '{};{}'.format(codcoligada, id)
